@@ -95,8 +95,14 @@ class QuotationCustomerController extends Controller
     public function show($id)
     {
         $quotation_customer = QuotationCustomer::findOrFail($id);
+        //total amount from quotation customer item
+        $total_amount = 0;
+        if($quotation_customer->quotation_customer_items){
+            $total_amount = $quotation_customer->quotation_customer_items->sum('amount');
+        }
         return view('quotation-customer.show')
-                ->with('quotation_customer',$quotation_customer);
+                ->with('quotation_customer',$quotation_customer)
+                ->with('total_amount',$total_amount);
     }
 
     /**

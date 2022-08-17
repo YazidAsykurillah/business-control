@@ -43,5 +43,6 @@ Route::resource('customer','CustomerController');
 Route::resource('customer-contact','CustomerContactController');
 
 //Quotation Customer
+Route::get('quotation-customer/{id}/items-datatables','Datatables\QuotationCustomerDatatablesController@getItems');
 Route::get('quotation-customer/datatables','Datatables\QuotationCustomerDatatablesController@index');
 Route::resource('quotation-customer','QuotationCustomerController');

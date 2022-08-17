@@ -27,10 +27,10 @@
                 Quotation Customers List
             </h3>
             <div class="card-tools">
-                <a href="/quotation-customer/create" class="btn btn-default btn-xs">
+                <a href="/quotation-customer/create" class="btn btn-default btn-sm">
                     <i class="fas fa-pencil-alt"></i>
                 </a>
-                <button type="button" id="btn-delete" class="btn btn-default btn-xs" title="Delete selected Quotation Customers">
+                <button type="button" id="btn-delete" class="btn btn-default btn-sm" title="Delete selected Quotation Customers">
                     <i class="fas fa-trash-alt"></i>
                 </button>
             </div>

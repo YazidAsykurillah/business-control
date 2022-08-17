@@ -46,5 +46,29 @@ class RoleSeeder extends Seeder
                 'code'=>'DEMO-WRT',
             ]
         );
+
+        Role::updateOrCreate(
+            [
+                'name' => 'Marketing',
+                'guard_name' => 'web',
+            ],
+            [
+                'name' => 'Marketing',
+                'guard_name' => 'web',
+                'code'=>'DEMO-MKT',
+            ]
+        );
+
+        Role::updateOrCreate(
+            [
+                'name' => 'Engineer',
+                'guard_name' => 'web',
+            ],
+            [
+                'name' => 'Engineer',
+                'guard_name' => 'web',
+                'code'=>'DEMO-ENG',
+            ]
+        );
     }
 }

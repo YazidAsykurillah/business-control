@@ -53,12 +53,6 @@
                         <input type="text" class="form-control" name="tax_number" placeholder="Tax Number">
                     </div>
                 </div>
-                <div class="form-group row">
-                    <label for="user_id" class="col-sm-2 col-form-label">User</label>
-                    <div class="col-sm-6">
-                        <select class="form-control" name="user_id" id="user_id"></select>
-                    </div>
-                </div>
             </div>
             <div class="card-footer">
                 <a href="/customer" class="btn btn-default">Cancel</a>
@@ -75,48 +69,6 @@
 @section('js')
 <script type="text/javascript">
 $(document).ready(function(){
-
-
-    //Block select user id
-    $('#user_id').select2({
-        placeholder: 'Select User',
-        ajax: {
-            url: "{!! url('/user/select2') !!}",
-            dataType: 'json',
-            delay: 250,
-            processResults: function (data, params) {
-              params.page = params.page || 1;
-              return {
-                results:  $.map(data.data, function (item) {
-                    return{
-                        text: item.name,
-                        id: item.id,
-                        code: item.code,
-                    }
-                }),
-                pagination: {
-                  more: (params.page * data.per_page) < data.total
-                },
-              };
-            },
-            cache: true
-        },
-        allowClear : true,
-        templateResult : templateResultUser,
-    });
-
-    function templateResultUser(results){
-      if(results.loading){
-        return "Searching...";
-      }
-      var markup = '<span>';
-          markup+=  results.code;
-          markup+=  '<br/>';
-          markup+=  results.text;
-          markup+= '</span>';
-      return $(markup);
-    }
-    //ENDBlock select user id
 
     //Block store  event
     $('#form-create').on('submit', function(event){

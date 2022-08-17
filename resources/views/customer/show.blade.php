@@ -39,14 +39,16 @@
                         <table class="table">
                             <tbody>
                                 <tr>
-                                    <td>Name</td>
-                                    <td>:</td>
+                                    <td style="width:15%;">Name</td>
+                                    <td style="width:5%;">:</td>
                                     <td>{{$customer->name}}</td>
                                 </tr>
                                 <tr>
-                                    <td>Address</td>
-                                    <td>:</td>
-                                    <td>{{$customer->address}}</td>
+                                    <td style="width:15%;">Address</td>
+                                    <td style="width:5%;">:</td>
+                                    <td>
+                                        {!!$customer->address!!}
+                                    </td>
                                 </tr>
                             </tbody>
                         </table>
@@ -131,7 +133,7 @@
                     </div>
                 </div>
                 <div class="modal-footer justify-content-between">
-                    <input type="text" name="customer_id" value="{{$customer->id}}">
+                    <input type="hidden" name="customer_id" value="{{$customer->id}}">
                     <button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
                     <button type="submit" class="btn btn-primary"><i class="fas fa-save"></i> Save</button>
                 </div>
@@ -166,7 +168,7 @@ $(document).ready(function(){
                 name: 'name',
                 render:function(data,type,row,meta){
                     let name_temp='';
-                        name_temp+='<a href="/customer/'+row.id+'">';
+                        name_temp+='<a href="/customer-contact/'+row.id+'">';
                         name_temp+= data;
                         name_temp+='</a>';
                     return name_temp;

@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 
 use App\QuotationCustomer;
+use App\QuotationCustomerItem;
 use DataTables;
 
 class QuotationCustomerDatatablesController extends Controller
@@ -36,4 +37,20 @@ class QuotationCustomerDatatablesController extends Controller
                 ->rawColumns(['action'])
                 ->make(true);
     }
+
+
+    public function getItems($quotation_customer_id)
+    {
+        $data = QuotationCustomerItem::query()
+            ->where('quotation_customer_id','=',$quotation_customer_id)
+            ->select('quotation_customer_items.*');
+        return Datatables::of($data)
+                ->addIndexColumn()
+                ->addColumn('action', function($row){
+                    return NULL;
+                })
+                ->rawColumns(['action'])
+                ->make(true);
+    }
+    
 }

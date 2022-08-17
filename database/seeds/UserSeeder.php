@@ -21,7 +21,7 @@ class UserSeeder extends Seeder
                 'name' => 'Yazid Asykurillah',
                 'email' => 'yazid@bitmaker-automation.com',
                 'password' => bcrypt('12345678'),
-                'code'=>'001'
+                'code'=>'000'
             ]
         );
         $superadmin->assignRole('Super Admin');
@@ -35,7 +35,7 @@ class UserSeeder extends Seeder
                 'name' => 'Admin',
                 'email' => 'testadmin@bitmaker-automation.com',
                 'password' => bcrypt('12345678'),
-                'code'=>'002'
+                'code'=>'001'
             ]
         );
         $admin->assignRole('Admin');
