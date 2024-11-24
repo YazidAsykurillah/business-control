@@ -14,12 +14,12 @@ class UserSeeder extends Seeder
     {
         $superadmin = User::updateOrCreate(
             [
-                'name' => 'Yazid Asykurillah',
-                'email' => 'yazid@bitmaker-automation.com',
+                'name' => 'Super Admin',
+                'email' => 'superadmin@email.com',
             ],
             [
-                'name' => 'Yazid Asykurillah',
-                'email' => 'yazid@bitmaker-automation.com',
+                'name' => 'Super Admin',
+                'email' => 'superadmin@email.com',
                 'password' => bcrypt('12345678'),
                 'code'=>'000'
             ]
